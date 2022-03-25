@@ -6,7 +6,9 @@ const router = Router();
 const userController = new UserController();
 
 router.get(
-  '/', userController.getAll(),
+  '/', 
+  async (req, res) =>
+   await userController.getAll(req, res),
 );
 
 
